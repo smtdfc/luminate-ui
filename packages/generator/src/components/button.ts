@@ -6,14 +6,14 @@ import {
 
 const button = className("btn");
 button.style({
+  "padding":"10px",
   "background": "none",
   "border": "none"
 })
 
 const buttonPrimary = cloneQueryStr(button).className("btn-primary");
 buttonPrimary.style({
-  "background": "var(--btn-primary-color)",
-  "border": "none"
+  "background": "green",
 })
 
 const btnStyle = style([
