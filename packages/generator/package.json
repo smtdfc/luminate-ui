@@ -1,0 +1,63 @@
+{
+  "name": "@neon-ui/generator",
+  "version": "0.0.1",
+  "description": "A CSS Generator for the NeonUI framework",
+  "license": "MIT",
+  "author": "smtdfc <me.smtdfc@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/",
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:prod": "NODE_ENV=production rollup -c",
+    "build:css":"node css",
+    "build:dev": "NODE_ENV=development rollup -c",
+    "clean": "rm -rf dist",
+    "test": "node ../../test/generator",
+    "prepublishOnly": "cp ../../LICENSE . && npm run clean && npm run build:prod"
+  },
+  "keywords": [
+    "compiler",
+    "generator",
+    "framework",
+    "neon-ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smtdfc/neon-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/smtdfc/neon-ui/issues"
+  },
+  "homepage": "https://github.com/smtdfc/neon-ui/tree/main/packages/generator#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@babel/generator": "^7.27.3",
+    "@babel/parser": "^7.27.4",
+    "@babel/traverse": "^7.27.4",
+    "@babel/types": "^7.27.3"
+  },
+  "peerDependencies": {
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__traverse": "^7.20.7"
+  }
+}
