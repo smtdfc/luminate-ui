@@ -1,13 +1,13 @@
 import { AvailableSpacing } from '../types/index.js';
 
-const enabled: Record<string,boolean>={
-  root:false,
+const enabled: Record<string, boolean> = {
+  root: false,
   outlineVariant: true,
-  variant:true,
-  spacing:true
-}
+  variant: true,
+  spacing: true,
+};
 
-const padding: Record < AvailableSpacing, string > = {
+const padding: Record<AvailableSpacing, string> = {
   xs: '4px 8px',
   sm: '6px 12px',
   md: '8px 16px',
@@ -19,7 +19,7 @@ const padding: Record < AvailableSpacing, string > = {
 
 const buttonConfig = {
   padding,
-  enabled
+  enabled,
 };
 
 export default buttonConfig;

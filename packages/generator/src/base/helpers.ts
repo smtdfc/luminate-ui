@@ -2,16 +2,16 @@ import {
   ElementStyleBuilder,
   StyleBuilder,
   Variable,
-  Builder
+  Builder,
 } from './style.js';
 
-export function style(b:Builder[] = []):StyleBuilder{
+export function style(b: Builder[] = []): StyleBuilder {
   let builder = new StyleBuilder();
   builder.add(...b);
   return builder;
 }
 
-export function tag(name:string):ElementStyleBuilder{
+export function tag(name: string): ElementStyleBuilder {
   let builder = new ElementStyleBuilder();
   builder.tag(name);
   return builder;
@@ -29,23 +29,22 @@ export function id(name: string): ElementStyleBuilder {
   return builder;
 }
 
-
 export function root(): ElementStyleBuilder {
-  let builder = new ElementStyleBuilder(":root");
+  let builder = new ElementStyleBuilder(':root');
   return builder;
 }
 
 export function allElement(): ElementStyleBuilder {
-  let builder = new ElementStyleBuilder("*");
+  let builder = new ElementStyleBuilder('*');
   return builder;
 }
 
-export function value(variable: Variable):string{
+export function value(variable: Variable): string {
   return variable.getCssVar();
 }
 
-export function args(...a:(string| Variable)[]):string{
-  return a.map(v => v instanceof Variable ? v.getCssVar() : v).join(" ");
+export function args(...a: (string | Variable)[]): string {
+  return a.map((v) => (v instanceof Variable ? v.getCssVar() : v)).join(' ');
 }
 
 export function capitalize(str: string): string {
@@ -53,6 +52,6 @@ export function capitalize(str: string): string {
   return str[0].toUpperCase() + str.slice(1).toLowerCase();
 }
 
-export function pass<T,U>(condition:boolean, value:T, fallback:U):T | U{
+export function pass<T, U>(condition: boolean, value: T, fallback: U): T | U {
   return condition ? value : fallback;
 }
