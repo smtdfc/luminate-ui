@@ -1,4 +1,4 @@
-import { components, globals } from '../dist/index.js';
+import { generateAll } from '../dist/index.js';
 import { writeFile, mkdir } from 'fs/promises';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -6,11 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-let cssCode = globals.generator() + "\n";
-
-cssCode += Object.keys(components)
-  .map(name => components[name].generator())
-  .join('\n');
+let cssCode = generateAll();
 
 const filePath = path.join(__dirname, '../../css/dist/index.css');
 const folderPath = path.dirname(filePath);
