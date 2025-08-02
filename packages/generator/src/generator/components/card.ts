@@ -5,6 +5,7 @@ import {
   args,
   capitalize,
   className,
+  mediaQuery,
   Variable,
   StyleBuilder,
   Builder,
@@ -28,7 +29,6 @@ export function init(
   );
   
   card.styles({
-    "display": "block",
     "boxSizing": "border-box",
     "borderRadius": "12px",
     "margin": config.spacingTokens.sm,
@@ -37,7 +37,8 @@ export function init(
   
   card.child("img").styles({
     width: "100%",
-    height: "100%",
+    height: "auto",
+    display: "block",
     objectFit: "cover"
   });
   
@@ -105,6 +106,33 @@ export function init(
     "margin-left": "auto"
   });
   
+  const cardGroup = className("card-group");
+  cardGroup.styles({
+    "display": "flex",
+    "columnGap": "10px",
+    "maxWidth": "100vw!important",
+    "overflowX": "scroll",
+    "height": "auto"
+  });
+  
+  const responsiveMobileCard = mediaQuery("(max-width: 48rem)", [
+    cardGroup.clone().child(".card").styles({
+      width: "95%",
+      flexShrink: "0",
+    }),
+    
+  ]);
+  
+  const responsivePcCard = mediaQuery("(min-width: 48rem)", [
+    cardGroup.clone().child(".card").styles({
+      width: "350px",
+      flexShrink: "0",
+    }),
+    
+    cardGroup.clone().styles({
+      paddingLeft: "16px",
+    })
+  ]);
   
   const all: Builder[] = [
     card,
@@ -114,7 +142,11 @@ export function init(
     cardBody,
     cardBtn,
     cardImgTop,
+    cardImgBottom,
     cardFooter,
+    cardGroup,
+    responsiveMobileCard,
+    responsivePcCard
   ];
   
   

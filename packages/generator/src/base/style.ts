@@ -47,6 +47,10 @@ export class ElementStyleBuilder {
     return item;
   }
   
+  clone(): ElementStyleBuilder {
+    return new ElementStyleBuilder(`${this.query}`);
+  }
+  
   cloneQuery(query: string = ''): ElementStyleBuilder {
     const item = new ElementStyleBuilder(`${this.query}${query}`);
     this.items.push(item)
@@ -108,7 +112,7 @@ export class ElementStyleBuilder {
     return css;
   }
 }
-export type Builder = ElementStyleBuilder;
+export type Builder = ElementStyleBuilder | MediaStyleBuilder;
 export class StyleBuilder {
   private items: Builder[] = [];
   constructor() {}
@@ -119,5 +123,19 @@ export class StyleBuilder {
   
   generate(): string {
     return this.items.map((v) => v.generate()).join('\n');
+  }
+}
+
+export class MediaStyleBuilder {
+  private builders: Builder[] = [];
+  constructor(public mediaQuery: string) {}
+  
+  add(...builders: Builder[]) {
+    this.builders.push(...builders);
+  }
+  
+  generate(): string {
+    const inner = this.builders.map(b => b.generate()).join('\n');
+    return `@media ${this.mediaQuery} {\n${inner}\n}`;
   }
 }

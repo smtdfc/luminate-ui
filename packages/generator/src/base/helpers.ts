@@ -1,5 +1,6 @@
 import {
   ElementStyleBuilder,
+  MediaStyleBuilder,
   StyleBuilder,
   Variable,
   Builder,
@@ -10,6 +11,13 @@ export function style(b: Builder[] = []): StyleBuilder {
   builder.add(...b);
   return builder;
 }
+
+export function mediaQuery(media: string,b: Builder[] = []): MediaStyleBuilder {
+  let builder = new MediaStyleBuilder(media);
+  builder.add(...b);
+  return builder;
+}
+
 
 export function tag(name: string): ElementStyleBuilder {
   let builder = new ElementStyleBuilder();
