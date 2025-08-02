@@ -1,4 +1,4 @@
-import { root, style, Variable, StyleBuilder } from '../../base/index.js';
+import { root, style,allElement, Variable, StyleBuilder } from '../../base/index.js';
 import { defaultConfig,Config } from '../../config/index.js';
 
 export const globalVariables: Record<string, Variable> = {};
@@ -14,9 +14,15 @@ export function init(
       config.colorTokens[color],
     );
   }
+  
+  const allEle = allElement().styles({
+    "margin":"0",
+    "padding":"0",
+    "boxSizing":"border-box"
+  });
 
   globalVariables['mainBg'] = root_.createVariable('mainBg', 'white');
   globalVariables['mainColor'] = root_.createVariable('mainColor', 'black');
 
-  return style([root_]);
+  return style([root_,allEle]);
 }

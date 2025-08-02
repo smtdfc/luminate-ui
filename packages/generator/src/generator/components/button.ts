@@ -76,7 +76,7 @@ export function init(
   }
 
   if (enabled.outlineVariant) {
-    const buttonOutlineVariants = config.baseColors.flatMap((v) => {
+    const buttonOutlineVariants = config.baseColors.map((v) => {
       let outlineButton = className(`btn-outline-${v}`)
         .setVariable(
           buttonVariables['btnColor'],
@@ -88,7 +88,7 @@ export function init(
           value(globalVariables[`${v}Color`]),
         );
 
-      let outlineButtonHover = outlineButton
+      outlineButton
         .cloneQuery(':hover')
         .setVariable(
           buttonVariables['btnColor'],
@@ -99,10 +99,20 @@ export function init(
           value(globalVariables[`${v}Color`]),
         );
 
-      return [outlineButton, outlineButtonHover];
+      return outlineButton;
     });
     all.push(...buttonOutlineVariants);
   }
 
+  const btnIcon = className("btn-icon");
+  btnIcon.styles({
+    "border-radius":"50%",
+    "background":"transparent"
+  });
+  btnIcon.cloneQuery(":hover").styles({
+    "background":"rgba(0,0,0,0.05)"
+  });
+  all.push(btnIcon);
+  
   return style(pass(enabled.root, all, []));
 }

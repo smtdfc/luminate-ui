@@ -67,14 +67,13 @@ export function init(
   });
   
   const accordionActive = accordion.cloneQuery(".active");
-  const onActive = [
-    accordionActive.child(".accordion-body").styles({
-      "display": "block"
-    }),
-    accordionActive.child(".accordion-btn").styles({
-      "transform":"rotate(180deg)"
-    })
-  ];
+  accordionActive.child(".accordion-body").styles({
+    "display": "block"
+  });
+  accordionActive.child(".accordion-btn").styles({
+    "transform": "rotate(180deg)"
+  })
+  
   
   
   const all: Builder[] = [
@@ -83,7 +82,6 @@ export function init(
     accordionTitle,
     accordionBtn,
     accordionBody,
-    ...onActive
   ];
   
   return style(pass(enabled.root, all, []));

@@ -1,6 +1,7 @@
 import globalConfig from './globals.js';
 import buttonConfig from './button.js';
 import accordionConfig from './accordion.js';
+import cardConfig from './card.js';
 
 function deepMerge<T extends Record<string, any>>(
   target: T,
@@ -34,6 +35,7 @@ export const defaultConfig = {
   components: {
     button: buttonConfig,
     accordion:accordionConfig,
+    card:cardConfig
   },
 };
 

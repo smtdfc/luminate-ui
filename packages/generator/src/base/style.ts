@@ -7,11 +7,11 @@ export function camelToKebab(str: string): string {
 }
 
 export class StyleSheet {
-  constructor(public styles: Record<string, string> = {}) {}
-  merge(s: Record<string, string> = {}) {
+  constructor(public styles: Record < string, string > = {}) {}
+  merge(s: Record < string, string > = {}) {
     this.styles = { ...this.styles, ...s };
   }
-
+  
   generate(): string {
     return Object.entries(this.styles)
       .map(([name, value]) => {
@@ -29,7 +29,7 @@ export class Variable {
   cssName() {
     return `--${camelToKebab(this.name)}`;
   }
-
+  
   getCssVar() {
     return `var(--${camelToKebab(this.name)})`;
   }
@@ -37,17 +37,22 @@ export class Variable {
 
 export class ElementStyleBuilder {
   private isTagStart = false;
+  private items: Builder[] = [];
   private _style = new StyleSheet({});
   constructor(public query: string = '') {}
-
+  
   child(query: string = ''): ElementStyleBuilder {
-    return new ElementStyleBuilder(`${this.query} ${query}`);
+    const item = new ElementStyleBuilder(`${this.query} ${query}`);
+    this.items.push(item)
+    return item;
   }
-
+  
   cloneQuery(query: string = ''): ElementStyleBuilder {
-    return new ElementStyleBuilder(`${this.query}${query}`);
+    const item = new ElementStyleBuilder(`${this.query}${query}`);
+    this.items.push(item)
+    return item;
   }
-
+  
   tag(name: string): this {
     if (!this.isTagStart) {
       this.isTagStart = true;
@@ -55,32 +60,32 @@ export class ElementStyleBuilder {
     }
     return this;
   }
-
+  
   className(name: string): this {
     this.query += `.${name}`;
     return this;
   }
-
+  
   id(name: string): this {
     this.query += `#${name}`;
     return this;
   }
-
+  
   pseudo(name: string): this {
     this.query += `:${name}`;
     return this;
   }
-
+  
   pseudoElement(name: string): this {
     this.query += `::${name}`;
     return this;
   }
-
-  styles(s: Record<string, string> = {}): this {
+  
+  styles(s: Record < string, string > = {}): this {
     this._style.merge(s);
     return this;
   }
-
+  
   createVariable(name: string, value: string): Variable {
     let variable = new Variable(name, value);
     this._style.merge({
@@ -88,7 +93,7 @@ export class ElementStyleBuilder {
     });
     return variable;
   }
-
+  
   setVariable(variable: Variable, value: string): this {
     variable.value = value;
     this._style.merge({
@@ -96,9 +101,10 @@ export class ElementStyleBuilder {
     });
     return this;
   }
-
+  
   generate(): string {
     let css = `${this.query}{ ${this._style.generate()} }\n`;
+    css += this.items.map(item => item.generate()).join("\n");
     return css;
   }
 }
@@ -106,11 +112,11 @@ export type Builder = ElementStyleBuilder;
 export class StyleBuilder {
   private items: Builder[] = [];
   constructor() {}
-
+  
   add(...b: Builder[]) {
     this.items.push(...b);
   }
-
+  
   generate(): string {
     return this.items.map((v) => v.generate()).join('\n');
   }
