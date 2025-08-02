@@ -1,7 +1,7 @@
 import { AvailableSpacing } from '../types/index.js';
 
 const enabled: Record<string, boolean> = {
-  root: false,
+  root: true,
   outlineVariant: true,
   variant: true,
   spacing: true,

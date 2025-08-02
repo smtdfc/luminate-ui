@@ -9,14 +9,12 @@ import {
   StyleBuilder,
   Builder,
 } from '../../base/index.js';
-
-import { defaultConfig } from '../../config/index.js';
-
+import { defaultConfig, Config} from '../../config/index.js';
 import { globalVariables } from '../globals/index.js';
 
 export const buttonVariables: Record<string, Variable> = {};
 export function init(
-  config: typeof defaultConfig = defaultConfig,
+  config: Config = defaultConfig,
 ): StyleBuilder {
   const enabled = config.components.button.enabled;
   const button = className('btn');
@@ -41,8 +39,12 @@ export function init(
     margin: config.spacingTokens.sm,
     padding: config.components.button.padding.md,
   });
-
-  const all: Builder[] = [button];
+  
+  let buttonHover = button.cloneQuery(":hover").styles({
+    "transform":"scale(0.95)"
+  });
+  
+  const all: Builder[] = [button,buttonHover];
 
   if (enabled.spacing) {
     const buttonSpacing = config.spacings.map((v) => {

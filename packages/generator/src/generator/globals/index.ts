@@ -1,10 +1,9 @@
 import { root, style, Variable, StyleBuilder } from '../../base/index.js';
-
-import { defaultConfig } from '../../config/index.js';
+import { defaultConfig,Config } from '../../config/index.js';
 
 export const globalVariables: Record<string, Variable> = {};
 export function init(
-  config: typeof defaultConfig = defaultConfig,
+  config: Config = defaultConfig,
 ): StyleBuilder {
   const root_ = root();
 

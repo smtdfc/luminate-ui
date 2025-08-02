@@ -1,5 +1,6 @@
 import globalConfig from './globals.js';
 import buttonConfig from './button.js';
+import accordionConfig from './accordion.js';
 
 function deepMerge<T extends Record<string, any>>(
   target: T,
@@ -32,11 +33,13 @@ export const defaultConfig = {
   ...globalConfig,
   components: {
     button: buttonConfig,
+    accordion:accordionConfig,
   },
 };
 
+export type Config = typeof defaultConfig;
 export function mergeConfig(
-  config: Partial<typeof defaultConfig>,
-): typeof defaultConfig {
+  config: Partial<Config>,
+): Config {
   return deepMerge(defaultConfig, config);
 }
