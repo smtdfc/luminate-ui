@@ -11,6 +11,7 @@ import offcanvas from './offcanvas.js';
 import menu from './menu.js';
 import list from './list.js';
 import toast from './toast.js';
+import loader from './loader.js';
 
 export default function (map: GeneratorMap) {
   button(map);
@@ -24,4 +25,5 @@ export default function (map: GeneratorMap) {
   menu(map);
   list(map);
   toast(map);
+  loader(map);
 }

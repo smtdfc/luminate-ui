@@ -69,7 +69,7 @@ export const OnColors = {
   light: '#111827', // text on gray-50
   dark: '#FFFFFF', // text on gray-900
 
-  muted: '#111827', // muted bg thì text dark mới rõ
+  muted: '#111827', // muted bg
   indigo: '#FFFFFF',
   violet: '#FFFFFF',
   pink: '#FFFFFF',
@@ -174,10 +174,23 @@ const classMap: Record<string, string> = {
   toast: 'toast',
   'toast-*': 'toast',
 
+  loader: 'loader',
+  'loader-*': 'loader',
+  'spin-loader': 'loader',
+  'dot-loader': 'loader',
+  'line-loader': 'loader',
+
   'heading-*': 'heading',
 
   'border-*': 'border',
 
+  'm-*': 'margin',
+  'mb-*': 'margin',
+  'mt-*': 'margin',
+  'ml-*': 'margin',
+  'mr-*': 'margin',
+  'mx-*': 'margin',
+  'my-*': 'margin',
   'p-*': 'padding',
   'pb-*': 'padding',
   'pt-*': 'padding',
