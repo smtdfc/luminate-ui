@@ -75,7 +75,7 @@ export default function (map: GeneratorMap) {
         transition: 'ease 0.3s transform, ease 0.3s opacity',
         opacity: '0',
       },
-      '.navbar.active .navbar-menu-container': {
+      '.navbar.open .navbar-menu-container': {
         transform: 'translateX(0%)',
         opacity: '1',
       },
@@ -120,11 +120,11 @@ export default function (map: GeneratorMap) {
         display: 'none',
         opacity: '0',
       },
-      '.navbar-menu li.active>ul': {
+      '.navbar-menu li.open>ul': {
         display: 'block',
         opacity: '1',
       },
-      '.navbar-menu li.active>a>.state-icon': {
+      '.navbar-menu li.open>a>.state-icon': {
         transform: 'rotate(-90deg)',
       },
       '.navbar-toggle-btn': {

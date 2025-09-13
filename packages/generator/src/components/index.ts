@@ -1,5 +1,5 @@
-import {defaultConfig,Config} from '../config/index.js';
-import {GeneratorFn,GeneratorMap} from '../types/index.js';
+import { defaultConfig, Config } from '../config/index.js';
+import { GeneratorFn, GeneratorMap } from '../types/index.js';
 import button from './button.js';
 import accordion from './accordion.js';
 import form from './form.js';
@@ -10,9 +10,9 @@ import navbar from './navbar.js';
 import offcanvas from './offcanvas.js';
 import menu from './menu.js';
 import list from './list.js';
+import toast from './toast.js';
 
-
-export default function (map:GeneratorMap){
+export default function (map: GeneratorMap) {
   button(map);
   accordion(map);
   form(map);
@@ -23,4 +23,5 @@ export default function (map:GeneratorMap){
   offcanvas(map);
   menu(map);
   list(map);
+  toast(map);
 }
