@@ -6,6 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 export default {
   input: 'src/index.ts',
+  external: ['@rumious/core'],
   output: {
     file: './dist/index.js',
     format: 'esm',
