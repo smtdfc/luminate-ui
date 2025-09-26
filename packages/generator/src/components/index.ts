@@ -12,6 +12,7 @@ import menu from './menu.js';
 import list from './list.js';
 import toast from './toast.js';
 import loader from './loader.js';
+import badge from './badge.js';
 
 export default function (map: GeneratorMap) {
   button(map);
@@ -26,4 +27,5 @@ export default function (map: GeneratorMap) {
   list(map);
   toast(map);
   loader(map);
+  badge(map);
 }

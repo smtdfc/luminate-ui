@@ -180,6 +180,9 @@ const classMap: Record<string, string> = {
   'dot-loader': 'loader',
   'line-loader': 'loader',
 
+  badge: 'badge',
+  'badge-*': 'badge',
+
   'heading-*': 'heading',
 
   'border-*': 'border',
