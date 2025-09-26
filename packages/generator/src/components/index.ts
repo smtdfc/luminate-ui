@@ -14,6 +14,7 @@ import toast from './toast.js';
 import loader from './loader.js';
 import badge from './badge.js';
 import avatar from './avatar.js';
+import container from './container.js';
 
 export default function (map: GeneratorMap) {
   button(map);
@@ -30,4 +31,5 @@ export default function (map: GeneratorMap) {
   loader(map);
   badge(map);
   avatar(map);
+  container(map);
 }

@@ -186,6 +186,9 @@ const classMap: Record<string, string> = {
   avatar: 'avatar',
   'avatar-*': 'avatar',
 
+  container: 'container',
+  'container-*': 'container',
+
   'heading-*': 'heading',
 
   'border-*': 'border',

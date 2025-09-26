@@ -4,12 +4,14 @@ import { GeneratorMap } from '../types/index.js';
 
 export default function (map: GeneratorMap) {
   map.set('avatar', (_config: Config, generator: CSSGenerator) => {
+    // base avatar
     generator.addClass('avatar', {
       display: 'inline-block',
       'border-radius': '9999px',
       'object-fit': 'cover',
     });
 
+    // sizes
     generator.addClass('avatar-sm', {
       width: '24px',
       height: '24px',
