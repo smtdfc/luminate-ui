@@ -37,6 +37,18 @@ export default function (map: GeneratorMap) {
       height: '96px',
     });
 
+    generator.addClass('avatar-container', {
+      display: 'flex',
+      alignItems: 'center',
+      columnGap: '10px',
+    });
+
+    generator.addClass('avatar-text', {
+      display: 'flex',
+      flexDirection: 'column',
+      rowGap: '1px',
+    });
+
     return generator.generate();
   });
 }

@@ -189,6 +189,9 @@ const classMap: Record<string, string> = {
   container: 'container',
   'container-*': 'container',
 
+  sidebar: 'sidebar',
+  'sidebar-*': 'sidebar',
+
   'heading-*': 'heading',
 
   'border-*': 'border',

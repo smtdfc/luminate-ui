@@ -15,6 +15,7 @@ import loader from './loader.js';
 import badge from './badge.js';
 import avatar from './avatar.js';
 import container from './container.js';
+import sidebar from './sidebar.js';
 
 export default function (map: GeneratorMap) {
   button(map);
@@ -32,4 +33,5 @@ export default function (map: GeneratorMap) {
   badge(map);
   avatar(map);
   container(map);
+  sidebar(map);
 }
