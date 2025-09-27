@@ -1,7 +1,7 @@
 {
-  "name": "vite-plugin-neon-ui",
-  "version": "0.0.1",
-  "description": "A Vite plugin for transforming for NeonUI",
+  "name": "vite-plugin-luminate-ui",
+  "version": "0.0.3",
+  "description": "A Vite plugin for transforming for LuminateUI",
   "license": "MIT",
   "author": "smtdfc <me.smtdfc@gmail.com>",
   "type": "module",
@@ -50,7 +50,7 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "neon-ui-generator": "workspace:*"
+    "luminate-ui-generator": "workspace:*"
   },
   "peerDependencies": {
     "vite": "7.x"

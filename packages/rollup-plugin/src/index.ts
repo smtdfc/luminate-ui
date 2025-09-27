@@ -1,13 +1,13 @@
 import { Plugin } from 'rollup';
-import { scan, generate, Config } from 'neon-ui-generator';
+import { scan, generate, Config } from 'luminate-ui-generator';
 
-export interface NeonUIPluginOptions {
+export interface LuminateUIPluginOptions {
   output: string;
   config?: Partial<Config>;
 }
 
-export default function neonUIPlugin(
-  options: NeonUIPluginOptions = {
+export default function LuminateUIPlugin(
+  options: LuminateUIPluginOptions = {
     output: 'index.css',
   },
 ): Plugin {
@@ -17,7 +17,7 @@ export default function neonUIPlugin(
   const config = options.config ?? {};
 
   return {
-    name: 'rollup-plugin-neon-ui',
+    name: 'rollup-plugin-luminate-ui',
 
     transform(source: string, id: string) {
       if (

@@ -1,11 +1,11 @@
 import { HtmlTagDescriptor, Plugin } from 'vite';
-import { scan, generate, collapseArray, Config } from 'neon-ui-generator';
+import { scan, generate, collapseArray, Config } from 'luminate-ui-generator';
 
 function arrayToUniqueArray<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));
 }
 
-export interface NeonUIPluginOptions {
+export interface LuminateUIPluginOptions {
   output?: string;
   config?: Partial<Config>;
 }
@@ -14,8 +14,8 @@ function escapeRegex(string: string) {
   return string.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
 }
 
-export default function neonUIPlugin(
-  options: NeonUIPluginOptions = {},
+export default function LuminateUIPlugin(
+  options: LuminateUIPluginOptions = {},
 ): Plugin {
   let classes: string[] = [];
 
@@ -23,7 +23,7 @@ export default function neonUIPlugin(
   const config = options.config ?? {};
   let isDev = false;
   return {
-    name: 'vite-plugin-neon-ui',
+    name: 'vite-plugin-luminate-ui',
 
     configResolved(config) {
       isDev = config.command === 'serve';

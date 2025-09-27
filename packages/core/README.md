@@ -1,14 +1,14 @@
-# neon-ui
+# luminate-ui
 
-Core runtime library for Neon UI. Provides JavaScript API to work with components, classes, and styles at runtime.
+Core runtime library for Luminate UI. Provides JavaScript API to work with components, classes, and styles at runtime.
 
 ---
 
 ## Features
 
-- Runtime API for Neon UI components.
+- Runtime API for Luminate UI components.
 - Manage UI classes dynamically.
-- Integrates seamlessly with Neon UI plugins and generator.
+- Integrates seamlessly with Luminate UI plugins and generator.
 - Lightweight and framework-agnostic.
 
 ---
@@ -16,16 +16,16 @@ Core runtime library for Neon UI. Provides JavaScript API to work with component
 ## Installation
 
 ```bash
-npm install neon-ui
+npm install luminate-ui
 # or
-yarn add neon-ui
+yarn add luminate-ui
 ```
 
 ---
 
 ## Notes
 
-- `neon-ui` is meant to be the **core runtime** for Neon UI.
+- `luminate-ui` is meant to be the **core runtime** for Luminate UI.
 - Can be used standalone in browser or integrated with build-time plugins like Rollup/Vite.
 - Lightweight and fully JavaScript based.
 

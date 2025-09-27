@@ -1,6 +1,6 @@
-# rollup-plugin-neon-ui
+# rollup-plugin-luminate-ui
 
-A Rollup plugin to automatically extract and generate CSS from your components using [Neon UI](https://github.com/smtdfc/neon-ui).
+A Rollup plugin to automatically extract and generate CSS from your components using [Luminate UI](https://github.com/smtdfc/luminate-ui).
 
 It scans your `.ts`, `.tsx`, `.js`, `.jsx` files, collects all classes, and emits a CSS file as an asset.
 
@@ -9,7 +9,7 @@ It scans your `.ts`, `.tsx`, `.js`, `.jsx` files, collects all classes, and emit
 ## Features
 
 - Works with TypeScript, TSX, JSX, and JS files.
-- Collects all classes using `neon-ui-generator`.
+- Collects all classes using `luminate-ui-generator`.
 - Generates a single CSS file during build.
 - Fully configurable via plugin options.
 
@@ -18,9 +18,9 @@ It scans your `.ts`, `.tsx`, `.js`, `.jsx` files, collects all classes, and emit
 ## Installation
 
 ```bash
-npm install --save-dev rollup-plugin-neon-ui neon-ui-generator
+npm install --save-dev rollup-plugin-luminate-ui luminate-ui-generator
 # or
-yarn add -D rollup-plugin-neon-ui neon-ui-generator
+yarn add -D rollup-plugin-luminate-ui luminate-ui-generator
 ```
 
 ---
@@ -31,7 +31,7 @@ yarn add -D rollup-plugin-neon-ui neon-ui-generator
 
 ```ts
 // rollup.config.ts
-import neonUIPlugin from './rollup-plugin-neon-ui';
+import LuminateUIPlugin from './rollup-plugin-luminate-ui';
 
 export default {
   input: 'src/index.ts',
@@ -40,9 +40,9 @@ export default {
     format: 'esm',
   },
   plugins: [
-    neonUIPlugin({
+    LuminateUIPlugin({
       output: 'styles.css', // CSS file output name, default is 'index.css'
-      config: { theme: 'dark' }, // optional Neon UI config
+      config: { theme: 'dark' }, // optional Luminate UI config
     }),
   ],
 };
@@ -65,18 +65,18 @@ After building, the plugin will generate a `styles.css` with the collected class
 
 ## Plugin Options
 
-| Option   | Type              | Default       | Description                                |
-| -------- | ----------------- | ------------- | ------------------------------------------ |
-| `output` | `string`          | `'index.css'` | Name of the CSS file to emit.              |
-| `config` | `Partial<Config>` | `{}`          | Optional config object to pass to Neon UI. |
+| Option   | Type              | Default       | Description                                    |
+| -------- | ----------------- | ------------- | ---------------------------------------------- |
+| `output` | `string`          | `'index.css'` | Name of the CSS file to emit.                  |
+| `config` | `Partial<Config>` | `{}`          | Optional config object to pass to Luminate UI. |
 
 ---
 
 ## How It Works
 
-1. **Scan**: The plugin scans your source files for `$ui()` calls using `neon-ui-generator`.
+1. **Scan**: The plugin scans your source files for `$ui()` calls using `luminate-ui-generator`.
 2. **Collect**: All class names are collected into an internal array.
-3. **Generate**: During `generateBundle`, it calls `generate(classes, config)` from Neon UI and emits a CSS file as an asset.
+3. **Generate**: During `generateBundle`, it calls `generate(classes, config)` from Luminate UI and emits a CSS file as an asset.
 
 ---
 

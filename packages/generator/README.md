@@ -1,4 +1,4 @@
-# neon-ui-generator
+# luminate-ui-generator
 
 A small utility to scan your source code for `$ui()` calls and generate CSS classes. Can be used standalone or in conjunction with Rollup/Vite plugins.
 
@@ -16,9 +16,9 @@ A small utility to scan your source code for `$ui()` calls and generate CSS clas
 ## Installation
 
 ```bash
-npm install --save-dev neon-ui-generator
+npm install --save-dev luminate-ui-generator
 # or
-yarn add -D neon-ui-generator
+yarn add -D luminate-ui-generator
 ```
 
 ---
@@ -28,7 +28,7 @@ yarn add -D neon-ui-generator
 ### Scanning and Generating CSS
 
 ```ts
-import { scan, generate, Config } from 'neon-ui-generator';
+import { scan, generate, Config } from 'luminate-ui-generator';
 
 const source = `
 const label = $ui("label");

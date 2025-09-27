@@ -56,16 +56,16 @@ importers:
 
   local:
     dependencies:
-      neon-ui-generator:
+      luminate-ui-generator:
         specifier: workspace:*
         version: link:../packages/generator
-      rollup-plugin-neon-ui:
+      rollup-plugin-luminate-ui:
         specifier: workspace:*
         version: link:../packages/rollup-plugin
       vite:
         specifier: 7.x
         version: 7.1.7(@types/node@22.18.6)(terser@5.44.0)
-      vite-plugin-neon-ui:
+      vite-plugin-luminate-ui:
         specifier: workspace:*
         version: link:../packages/vite-plugin
 
@@ -99,7 +99,7 @@ importers:
 
   packages/rollup-plugin:
     dependencies:
-      neon-ui-generator:
+      luminate-ui-generator:
         specifier: workspace:*
         version: link:../generator
       rollup:
@@ -108,7 +108,7 @@ importers:
 
   packages/vite-plugin:
     dependencies:
-      neon-ui-generator:
+      luminate-ui-generator:
         specifier: workspace:*
         version: link:../generator
       vite:

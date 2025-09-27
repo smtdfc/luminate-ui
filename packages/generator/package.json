@@ -1,7 +1,7 @@
 {
-  "name": "neon-ui-generator",
-  "version": "0.0.1",
-  "description": "NeonUI framework",
+  "name": "luminate-ui-generator",
+  "version": "0.0.3",
+  "description": "LuminateUI framework",
   "license": "MIT",
   "author": "smtdfc <me.smtdfc@gmail.com>",
   "type": "module",
@@ -23,26 +23,26 @@
     "LICENSE"
   ],
   "scripts": {
-    "build:prod": "NODE_ENV=production rollup -c",
-    "build:dev": "NODE_ENV=development rollup -c",
-    "clean": "rm -rf dist",
+    "build:prod": "cross-env NODE_ENV=production rollup -c",
+    "build:dev": "cross-env NODE_ENV=development rollup -c",
+    "clean": "shx rm -rf dist",
     "test": "node ../../test/generator",
-    "prepublishOnly": "cp ../../LICENSE . && npm run clean && npm run build:prod"
+    "prepublishOnly": "shx cp ../../LICENSE . && npm run clean && npm run build:prod"
   },
   "keywords": [
     "compiler",
     "core",
     "framework",
-    "neon-ui"
+    "luminate-ui"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/smtdfc/neon-ui"
+    "url": "https://github.com/smtdfc/luminate-ui"
   },
   "bugs": {
-    "url": "https://github.com/smtdfc/neon-ui/issues"
+    "url": "https://github.com/smtdfc/luminate-ui/issues"
   },
-  "homepage": "https://github.com/smtdfc/neon-ui/tree/main/packages/rollup-plugin#readme",
+  "homepage": "https://github.com/smtdfc/luminate-ui/tree/main/packages/rollup-plugin#readme",
   "engines": {
     "node": ">=18"
   },

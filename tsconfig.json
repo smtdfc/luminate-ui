@@ -12,7 +12,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "neon-ui-*": ["./packages/*/dist/index.d.ts"]
+      "luminate-ui-*": ["./packages/*/dist/index.d.ts"]
     }
   }
 }
