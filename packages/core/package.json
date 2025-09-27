@@ -1,7 +1,7 @@
 {
-  "name": "@neon-ui/core",
+  "name": "neon-ui",
   "version": "0.0.1",
-  "description": "Core of NeonUI framework",
+  "description": "NeonUI framework",
   "license": "MIT",
   "author": "smtdfc <me.smtdfc@gmail.com>",
   "type": "module",
@@ -42,7 +42,7 @@
   "bugs": {
     "url": "https://github.com/smtdfc/neon-ui/issues"
   },
-  "homepage": "https://github.com/smtdfc/neon-ui/tree/main/packages/generator#readme",
+  "homepage": "https://github.com/smtdfc/neon-ui/tree/main/packages/core#readme",
   "engines": {
     "node": ">=18"
   },

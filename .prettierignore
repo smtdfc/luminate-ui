@@ -1,0 +1,11 @@
+# Ignore build output
+dist
+build
+out
+node_modules
+.rollup.cache/**
+
+# Optional: ignore lockfile
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
