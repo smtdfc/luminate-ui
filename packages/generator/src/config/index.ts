@@ -221,7 +221,7 @@ const patternList = Object.entries(classMap)
     return { regex: new RegExp(`^${regexKey}$`), value };
   });
 
-function matchClass(name: string): string {
+export function matchClass(name: string): string {
   if (classMap[name]) return classMap[name];
 
   for (const { regex, value } of patternList) {
@@ -231,7 +231,7 @@ function matchClass(name: string): string {
   return classMap['*'] || name;
 }
 
-function collapseArray<T>(arr: T[]): T[] {
+export function collapseArray<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));
 }
 

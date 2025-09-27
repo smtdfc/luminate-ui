@@ -69,3 +69,6 @@ export function generate(
 
   return css;
 }
+
+export * from './scanner/index.js';
+export * from './config/index.js';
