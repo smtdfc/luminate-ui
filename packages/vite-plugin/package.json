@@ -1,0 +1,58 @@
+{
+  "name": "vite-plugin-neon-ui",
+  "version": "0.0.1",
+  "description": "A Vite plugin for transforming for NeonUI",
+  "license": "MIT",
+  "author": "smtdfc <me.smtdfc@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:prod": "cross-env NODE_ENV=production rollup -c",
+    "build:dev": "cross-env  NODE_ENV=development rollup -c",
+    "clean": "shx rm -rf dist",
+    "prepublishOnly": "shx cp  ../../LICENSE . && npm run clean && npm run build:prod"
+  },
+  "keywords": [
+    "compiler",
+    "jsx",
+    "loader",
+    "framework",
+    "rollup",
+    "template",
+    "transform"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smtdfc/rumious"
+  },
+  "bugs": {
+    "url": "https://github.com/smtdfc/rumious/issues"
+  },
+  "homepage": "https://github.com/smtdfc/rumious/tree/main/packages/vite-plugin#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "neon-ui-generator": "workspace:*"
+  },
+  "peerDependencies": {
+    "vite": "7.x"
+  }
+}
