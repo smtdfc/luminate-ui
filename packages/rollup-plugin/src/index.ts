@@ -1,5 +1,5 @@
 import { Plugin } from 'rollup';
-import { scan, generate, Config } from 'luminate-ui-generator';
+import { scan, generate, Config, matchClass } from 'luminate-ui-generator';
 
 export interface LuminateUIPluginOptions {
   output: string;
@@ -30,7 +30,8 @@ export default function LuminateUIPlugin(
       }
 
       const result = scan(source);
-      classes.push(...result.classes);
+      const newClasses = result.classes.map((c: string) => matchClass(c));
+      classes.push(...newClasses);
 
       return {
         code: result.code,

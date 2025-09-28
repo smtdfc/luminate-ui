@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-luminate-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Rollup plugin for transforming for LuminateUI",
   "license": "MIT",
   "author": "smtdfc <me.smtdfc@gmail.com>",
