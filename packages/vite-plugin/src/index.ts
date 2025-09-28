@@ -1,5 +1,5 @@
 import { HtmlTagDescriptor, Plugin } from 'vite';
-import { scan, generate, collapseArray, Config } from 'luminate-ui-generator';
+import { scan, generate, matchClass, Config } from 'luminate-ui-generator';
 
 function arrayToUniqueArray<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));
@@ -40,7 +40,8 @@ export default function LuminateUIPlugin(
       }
 
       const result = scan(source);
-      classes.push(...result.classes);
+      const newClasses = result.classes.map((c: string) => matchClass(c));
+      classes.push(...newClasses);
 
       classes = arrayToUniqueArray(classes);
       return {
